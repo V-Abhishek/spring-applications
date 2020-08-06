@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Movie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h3>Delete Movie</h3>
+        <form method="POST" action="#" id="movieForm">
+            <Label>Enter Movie Name:
+                <input type="text" name="deleteMovie" required>
+            </label>
+            <br>
+            <input type="hidden" name="action" value="deletion">
+            <Label>Select Mapping*:</Label><br>
+            <input type="radio" class="input-hidden" name="selUrl" value="moviesController.htm" required/>SimpleUrlHandlerMapping
+            <input type="radio" class="input-hidden" name="selUrl" value="beanMoviesController.htm"/>BeanNameUrlHandlerMapping
+            <input type="radio" class="input-hidden" name="selUrl" value="viaclass.htm"/>ControllerClassNameHandlerMapping
+            <input type="radio" class="input-hidden" name="selUrl" value="interceptor.htm"/>Interceptor
+                <input type="radio" class="input-hidden" name="selUrl" value="filter.htm"/>Filter<br><br>
+            <input type="submit" value="Submit"> 
+        </form>
+    </body>
+    <script>
+        var radios = document.getElementsByClassName('input-hidden');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('change', function (e) {
+                document.getElementById('movieForm').setAttribute('action', e.target.value);
+            }, false);
+        }
+    </script>
+</html>

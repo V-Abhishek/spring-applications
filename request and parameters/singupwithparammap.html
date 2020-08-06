@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp(Using Parameter Map)</title>
+</head>
+<body>
+	<h1>This is sign-up form</h1>
+	<form action="data-by-parameter-map" method="POST">
+		<div>
+			<label>Email:
+				<input type="Email" name="Email">
+			</label>
+		</div>
+		<div>
+			<label>Password:
+				<input type="Password" name="Password">
+			</label>
+		</div>
+		<div>
+			<label>Confirm Password:
+				<input type="Password" name="ConfirmPassword">
+			</label>	
+		</div>
+		<div>
+			<label>Upload Your Picture:
+				<input type="file" name="Image" accept="image/*">
+			</label>
+		</div>
+		<div>
+			<label>Gender:</label>
+			<input type="radio" name="Gender" value= "Male">
+			<label for="male">Male</label>
+			<input type="radio" name="Gender" value= "Female">
+			<label for="female">Female</label>
+		</div>
+		<div>
+			<label>Select Country:</label>
+			<select name="Country">
+				<option value="United Kingdom">United Kingdom</option>
+				<option value="United States">United States</option>
+				<option value="Australia">Australia</option>
+			</select>
+		</div>
+		<div>
+			<label>Hobby:</label>
+			<input type="checkbox" name="Hobbies" value="cricket">
+			<label>Cricket</label>
+			<input type="checkbox" name="Hobbies" value="football">
+			<label>Football</label> 
+		</div>
+		<div>
+			<label for="txtarea">Address:</label>
+			<textarea rows="3" columns="6" name="Address" id="txtarea"></textarea>
+		</div>
+		<br>
+		<input type="submit">		
+	</form>
+</body>
+</html>

@@ -1,2 +1,8 @@
-# spring-applications
-Web applications built using Spring MVC Architecture
+# Web Applications
+Web applications demonstrating concepts of web application structure and Spring MVC Architecture
+
+### Languages and Tools
+
+- Java
+- MySQL
+- Spring Framework

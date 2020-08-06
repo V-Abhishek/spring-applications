@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Music</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Music Albums</h2>
+        <div>
+            <p align="right">[<a href="viewcart.jsp">View Cart</a>]</p>
+        </div>
+        <div>
+            <form action="../managecart.htm?action=add" method="POST">
+                <input type="hidden" name="category" value="disks">
+                <div>
+                    <input type="checkbox" name="items" value="The Wall">The Wall [$15.00]<br>
+                    <input type="checkbox" name="items" value="The Dark">The Dark Side of Moon [$17.00]<br>
+                    <input type="checkbox" name="items" value="Animals">Animals [$10.00]<br>
+                    <input type="checkbox" name="items" value="The Division Bell">The Division Bell [$20.00]<br>
+                    <input type="checkbox" name="items" value="Meddle">Meddle [$15.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+    </body>
+</html>

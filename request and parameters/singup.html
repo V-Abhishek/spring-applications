@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SignUp</title>
+</head>
+<body>
+	<h1>This is sign-up form</h1>
+	<form action="data-by-parameter" method="POST">
+		<div>
+			<label>Email:
+				<input type="Email" name="email">
+			</label>
+		</div>
+		<div>
+			<label>Password:
+				<input type="Password" name="password">
+			</label>
+		</div>
+		<div>
+			<label>Confirm Password:
+				<input type="Password" name="confirmPassword">
+			</label>	
+		</div>
+		<div>
+			<label>Upload Your Picture:
+				<input type="file" name="file" accept="image/*">
+			</label>
+		</div>
+		<div>
+			<label>Gender:</label>
+			<input type="radio" name="gender" value= "Male">
+			<label for="male">Male</label>
+			<input type="radio" name="gender" value= "Female">
+			<label for="female">Female</label>
+		</div>
+		<div>
+			<label>Select Country:</label>
+			<select name="country">
+				<option value="United Kingdom">United Kingdom</option>
+				<option value="United States">United States</option>
+				<option value="Australia">Australia</option>
+			</select>
+		</div>
+		<div>
+			<label>Hobby:</label>
+			<input type="checkbox" name="hobbies" value="cricket">
+			<label>Cricket</label>
+			<input type="checkbox" name="hobbies" value="football">
+			<label>Football</label> 
+		</div>
+		<div>
+			<label for="txtarea">Address:</label>
+			<textarea rows="3" columns="6" name="address" id="txtarea"></textarea>
+		</div>
+		<br>
+		<input type="submit">		
+	</form>
+</body>
+</html>

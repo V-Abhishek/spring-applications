@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Movie</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+        <h1>Movie Details</h1>
+        <form method="POST" action="#" id="movieForm">
+            <div>
+                <label>Movie Name*:
+                    <input type="text" name="movieName" required>
+                </label><br>
+                <label>Lead Actor:
+                    <input type="text" name="actor">
+                </label><br>
+                <label>Lead Actress:
+                    <input type="text" name="actress">
+                </label><br>
+                <label>Genre:
+                    <input type="text" name="genre">
+                </label><br>
+                <label>Year*:
+                    <input type="text" name="year" required>
+                </label><br><br>
+                <input type="hidden" name="action" value="addition">
+                <Label>Select Mapping*:</Label><br>
+                <input type="radio" class="input-hidden" name="selUrl" value="moviesController.htm" required/>SimpleUrlHandlerMapping
+                <input type="radio" class="input-hidden" name="selUrl" value="beanMoviesController.htm"/>BeanNameUrlHandlerMapping
+                <input type="radio" class="input-hidden" name="selUrl" value="viaclass.htm"/>ControllerClassNameHandlerMapping
+                <input type="radio" class="input-hidden" name="selUrl" value="interceptor.htm"/>Interceptor
+                <input type="radio" class="input-hidden" name="selUrl" value="filter.htm"/>Filter<br><br>
+                <input type="submit" value="Submit"> 
+            </div>
+        </form>
+    </body>
+    <script>
+        var radios = document.getElementsByClassName('input-hidden');
+        for (var i = 0; i < radios.length; i++) {
+            radios[i].addEventListener('change', function (e) {
+                document.getElementById('movieForm').setAttribute('action', e.target.value);
+            }, false);
+        }
+    </script>
+</html>

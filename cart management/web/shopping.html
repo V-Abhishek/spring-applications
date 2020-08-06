@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <style>
+            /* Style the tab */
+            .tab {
+                overflow: hidden;
+                border: 1px solid #ccc;
+                background-color: #f1f1f1;
+            }
+
+            /* Style the buttons that are used to open the tab content */
+            .tab button {
+                background-color: inherit;
+                float: left;
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 14px 16px;
+                transition: 0.3s;
+            }
+
+            /* Change background color of buttons on hover */
+            .tab button:hover {
+                background-color: #ddd;
+            }
+
+            /* Create an active/current tablink class */
+            .tab button.active {
+                background-color: #ccc;
+            }
+
+            /* Style the tab content */
+            .tabcontent {
+                display: none;
+                padding: 6px 12px;
+                border: 1px solid #ccc;
+                border-top: none;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function () {
+                $("#button_1").submit(function (event) {
+                    console.log("5");
+                    event.preventDefault();
+                    var booksPlaced = [];
+                    $.each($("input[name='book']:checked"), function (i) {
+                        booksPlaced.push($(this)[0].nextSibling.nodeValue);
+                    });
+                    console.log(booksPlaced);
+                    var $form = $(this),
+                            url = "DisplayCart";
+                    var posting = $.post(url, {order: booksPlaced.toString(), orderType: "books"});
+                });
+
+                $("#button_2").submit(function (event) {
+                    console.log("55");
+                    event.preventDefault();
+                    var musicPlaced = [];
+                    $.each($("input[name='music']:checked"), function () {
+                        musicPlaced.push($(this)[0].nextSibling.nodeValue);
+                    });
+                    var $form = $(this),
+                            url = "DisplayCart";
+                    var posting = $.post(url, {order: musicPlaced.toString(), orderType: "music"});
+                });
+
+                $("#button_3").submit(function (event) {
+                    console.log("5555");
+                    event.preventDefault();
+                    var laptopsPlaced = [];
+                    $.each($("input[name='laptop']:checked"), function () {
+                        laptopsPlaced.push($(this)[0].nextSibling.nodeValue);
+                    });
+                    var $form = $(this),
+                            url = "DisplayCart";
+                    var posting = $.post(url, {order: laptopsPlaced.toString(), orderType: "laptops"});
+                });
+
+            });
+            function openCity(evt, cityName) {
+                // Declare all variables
+                var i, tabcontent, tablinks;
+
+                // Get all elements with class="tabcontent" and hide them
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                // Get all elements with class="tablinks" and remove the class "active"
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+
+                // Show the current tab, and add an "active" class to the button that opened the tab
+                document.getElementById(cityName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+        </script>    
+    </head>
+    <body>       
+        <!-- Tab links -->
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'tabBook')">Books</button>
+            <button class="tablinks" onclick="openCity(event, 'tabMusic')">Music</button>
+            <button class="tablinks" onclick="openCity(event, 'tabLaptop')">Laptops</button>
+        </div>
+
+        <!-- Tab content -->
+        <div id="tabBook" class="tabcontent">
+            <form id="button_1" method="POST">
+                <h3>Books</h3>
+                <input type="hidden" name="category" value="pages">
+                <div>
+                    <input type="checkbox" name="book">Java Programming Book [$30.00]<br>
+                    <input type="checkbox" name="book">Oracle Database programming [$23.00]<br>
+                    <input type="checkbox" name="book">System Analysis programming[$23.00]<br>
+                    <input type="checkbox" name="book">Object oriented software programming[$23.00]<br>
+                    <input type="checkbox" name="book">Java Web Services [$33.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+
+        <div id="tabMusic" class="tabcontent">
+            <h3>Music</h3>
+            <form id="button_2" method="POST">
+                <input type="hidden" name="category" value="disks">
+                <div>
+                    <input type="checkbox" name="music">The Wall [$15.00]<br>
+                    <input type="checkbox" name="music">The Dark Side of Moon [$17.00]<br>
+                    <input type="checkbox" name="music">Animals [$10.00]<br>
+                    <input type="checkbox" name="music">The Division Bell [$20.00]<br>
+                    <input type="checkbox" name="music">Meddle [$15.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+
+        <div id="tabLaptop" class="tabcontent">
+            <h3>Laptops</h3>
+            <form id="button_3" method="POST">
+                <input type="hidden" name="category" value="keyboards">
+                <div>
+                    <input type="checkbox" name="laptop">Apple MacBookPro [$1000.00]<br>
+                    <input type="checkbox" name="laptop">Asus with Centurion [$899.00]<br>
+                    <input type="checkbox" name="laptop">HP Pavilon [$800.00]<br>
+                    <input type="checkbox" name="laptop">Dell inspiron [$850.00]<br>
+                    <input type="checkbox" name="laptop">Sony VAIO [$799.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+    </body>
+</html>

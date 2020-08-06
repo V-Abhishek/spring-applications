@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Books</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Books</h2>
+        <div>
+            <p align="right">[<a href="viewcart.jsp">View Cart</a>]</p>
+        </div>
+        <div>
+            <form action="../managecart.htm?action=add" method="POST">
+                <input type="hidden" name="category" value="pages">
+                <div>
+                    <input type="checkbox" name="items" value="Java Programming Book">Java Programming Book [$30.00]<br>
+                    <input type="checkbox" name="items" value="Oracle Database programming">Oracle Database programming [$23.00]<br>
+                    <input type="checkbox" name="items" value="System Analysis programming">System Analysis programming [$23.00]<br>
+                    <input type="checkbox" name="items" value="Object oriented software programming">Object oriented software programming[$23.00]<br>
+                    <input type="checkbox" name="items" value="Java Web Services">Java Web Services [$33.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+    </body>
+</html>

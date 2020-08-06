@@ -1,0 +1,57 @@
+<web-app>
+	<welcome-file-list>
+		<welcome-file>singup.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>DataByParameter</servlet-name> <!--Alias-->
+		<servlet-class>DataByParameter</servlet-class> <!--Exact Name of class -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DataByParameter</servlet-name> <!-- Exact alias mentioned in the servlet tag-->
+		<url-pattern>/data-by-parameter</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DataByParameterNames</servlet-name> <!--Alias-->
+		<servlet-class>DataByParameterNames</servlet-class> <!--Exact Name of class -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DataByParameterNames</servlet-name> <!-- Exact alias mentioned in the servlet tag-->
+		<url-pattern>/data-by-parameter-names</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DispalyRequestHeaders</servlet-name> <!--Alias-->
+		<servlet-class>DispalyRequestHeaders</servlet-class> <!--Exact Name of class -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DispalyRequestHeaders</servlet-name> <!-- Exact alias mentioned in the servlet tag-->
+		<url-pattern>/display-header-details</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DataByParameterMap</servlet-name> <!--Alias-->
+		<servlet-class>DataByParameterMap</servlet-class> <!--Exact Name of class -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DataByParameterMap</servlet-name> <!-- Exact alias mentioned in the servlet tag-->
+		<url-pattern>/data-by-parameter-map</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DisplayChildrenNames</servlet-name> <!--Alias-->
+		<servlet-class>DisplayChildrenNames</servlet-class> <!--Exact Name of class -->
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>DisplayChildrenNames</servlet-name> <!-- Exact alias mentioned in the servlet tag-->
+		<url-pattern>/display-children-names</url-pattern>
+	</servlet-mapping>
+	
+
+</web-app>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Laptops</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h2>Laptops</h2>
+        <div>
+            <p align="right">[<a href="viewcart.jsp">View Cart</a>]</p>
+        </div>
+        <div>
+            <form action="../managecart.htm?action=add" method="POST">
+                <input type="hidden" name="category" value="keyboards">
+                <div>
+                    <input type="checkbox" name="items" value="Apple MacBookPro">Apple MacBookPro [$1000.00]<br>
+                    <input type="checkbox" name="items" value="Asus with Centurion">Asus with Centurion [$899.00]<br>
+                    <input type="checkbox" name="items" value="HP Pavilon">HP Pavilon [$800.00]<br>
+                    <input type="checkbox" name="items" value="Dell inspiron">Dell inspiron [$850.00]<br>
+                    <input type="checkbox" name="items" value="Sony VAIO">Sony VAIO [$799.00]<br>
+                </div>
+                <button type="submit">Add To Cart</button>
+            </form>
+        </div>
+    </body>
+</html>
